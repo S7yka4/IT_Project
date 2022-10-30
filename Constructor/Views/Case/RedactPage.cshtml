@@ -1,0 +1,26 @@
+﻿@using Constructor.Storage.Models;
+
+@model Case;
+<body>
+    @using (Html.BeginForm("RedactCase", "Case", FormMethod.Post))
+    {
+
+        <label>Название   </label><input type="text" name="_Name" value=@Model.Name /><br />
+        <label>Ссылка   </label><input type="text" name="_Img" value=@Model.Img /><br />
+        <label>Количество   </label><input type="text" name="_Count" value=@Model.Count /><br />
+        <label>Цена   </label><input type="text" name="_Cost" value=@Model.Cost /><br />
+        <label>Формафактор   </label><input type="text" name="_FormFactor" value=@Model.FormFactor /><br />
+        <label>Количество вентиляторов 140мм  </label><input type="text" name="_FAN140Count" value=@Model.Fan140Count /><br />
+        <label>Количество вентиляторов 120мм  </label><input type="text" name="_FAN120Count" value=@Model.Fan120Count /><br />
+        <label>Количество вентиляторов 90мм  </label><input type="text" name="_FAN90Count" value=@Model.Fan90Count /><br />
+        <label>Количество жестких дисков 2.5  </label><input type="text" name="_Drive25Count" value=@Model.Drive25Count /><br />
+        <label>Количество жестких дисков 3.5  </label><input type="text" name="_Drive35Count" value=@Model.Drive35Count /><br />
+        <input type="hidden" name="id" value="@Model.Id">
+        <input type="submit" value="Изменить запись">
+    }
+    <br /><br /><br />
+    @using (Html.BeginForm("MainPage", "Main"))
+    {
+        <input type="submit" value="В главное меню">
+    }
+</body>

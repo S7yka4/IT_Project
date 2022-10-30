@@ -1,0 +1,36 @@
+﻿@using Constructor.Storage.Containers;
+
+@model FanAndAssemblyContainer;
+<body>
+    <h2>ID сборки</h2>
+    <h1>@ViewData["id"]</h1>
+    
+    @foreach (var tmp in Model.FANs)
+    {
+        <label>Id   </label>@tmp.Id
+        <br />
+        <label>Название   </label>@tmp.Name
+        <br />
+        <label>Ссылка   </label>@tmp.Img
+        <br />
+        <label>Количество   </label>@tmp.Name
+        <br />
+        <label>Цена   </label>@tmp.Cost
+        <br />
+        <label>Размер   </label>@tmp.Size
+        <br />
+        @using (Html.BeginForm("EditFANInAssembly", "Pair", FormMethod.Post))
+        {
+            <input type="hidden" name="AssemblyId" value="@Model.Id">
+            <input type="hidden" name="FANid" value="@tmp.Id">
+            <input type="submit" value="Добавить в сборку">
+        }
+
+        <br /><br /><br />
+    }
+    @using (Html.BeginForm("TakeAssembly", "Assembly", FormMethod.Get))
+    {
+        <input type="hidden" name="Id" value="@Model.Id">
+        <input type="submit" value="Завершить добавлениу">
+    }
+</body>

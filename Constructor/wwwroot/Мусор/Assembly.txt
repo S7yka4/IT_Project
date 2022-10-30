@@ -1,0 +1,209 @@
+@using Constructor.Storage.Models;
+
+@model Assembly;
+    <body>
+        <h2>раз</h2>
+        <h1>@ViewData["Message"]</h1>
+        <h3>раз</h3>
+        @if (Model.Case.Type == "")
+        {
+            using (Html.BeginForm("Output", "Case", FormMethod.Post))
+            {
+                <input type="hidden" name="_tmp" value="@Model">
+                <input type="submit" value="Добавить корпус">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Название   </label>@Model.Case.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.Case.Img
+            <br />
+            <label>Количество   </label>@Model.Case.Count
+            <br />
+            <label>Цена   </label>@Model.Case.Cost
+            <br />
+            using (Html.BeginForm("DeleteFromAssembly", "Main", FormMethod.Post))
+            {
+                <input type="hidden" name="i" value="0">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.CPU.Type == "")
+        {
+            using (Html.BeginForm("CPUOutput", "Main"))
+            {
+                <input type="submit" value="Добавить CPU">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Название   </label>@Model.CPU.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.CPU.Img
+            <br />
+            <label>Количество   </label>@Model.CPU.Name
+            <br />
+            <label>Цена   </label>@Model.CPU.Cost
+            <br />
+            using (Html.BeginForm("DeleteFromAssembly", "Main", FormMethod.Post))
+            {
+                <input type="hidden" name="i" value="1">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.Drive.Type == "")
+        {
+            using (Html.BeginForm("DriveOutput", "Main"))
+            {
+                <input type="submit" value="Добавить ЖД">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Название   </label>@Model.Drive.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.Drive.Img
+            <br />
+            <label>Количество   </label>@Model.Drive.Name
+            <br />
+            <label>Цена   </label>@Model.Drive.Cost
+            <br />
+            using (Html.BeginForm("DeleteFromAssembly", "Main", FormMethod.Post))
+            {
+                <input type="hidden" name="i" value="2">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.FAN.Type == "")
+        {
+            using (Html.BeginForm("FANOutput", "Main"))
+            {
+                <input type="submit" value="Добавить Вентилятор">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Название   </label>@Model.FAN.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.FAN.Img
+            <br />
+            <label>Количество   </label>@Model.FAN.Name
+            <br />
+            <label>Цена   </label>@Model.FAN.Cost
+            <br />
+            using (Html.BeginForm("DeleteFromAssembly", "Main", FormMethod.Post))
+            {
+                <input type="hidden" name="i" value="3">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.FSP.Type == "")
+        {
+            using (Html.BeginForm("FSPOutput", "Main"))
+            {
+                <input type="submit" value="Добавить блок питания">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Название   </label>@Model.FSP.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.FSP.Img
+            <br />
+            <label>Количество   </label>@Model.FSP.Name
+            <br />
+            <label>Цена   </label>@Model.FSP.Cost
+            <br />
+            using (Html.BeginForm("DeleteFromAssembly", "Main", FormMethod.Post))
+            {
+                <input type="hidden" name="i" value="4">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.GPU.Type == "")
+        {
+            using (Html.BeginForm("GPUOutput", "Main"))
+            {
+                <input type="submit" value="Добавить GPU">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Название   </label>@Model.GPU.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.GPU.Img
+            <br />
+            <label>Количество   </label>@Model.GPU.Name
+            <br />
+            <label>Цена   </label>@Model.GPU.Cost
+            <br />
+            using (Html.BeginForm("DeleteFromAssembly", "Main", FormMethod.Post))
+            {
+                <input type="hidden" name="i" value="5">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.Motherboard.Type == "")
+        {
+            using (Html.BeginForm("MotherboardOutput", "Main"))
+            {
+                <input type="submit" value="Добавить материнскую плату">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Название   </label>@Model.Motherboard.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.Motherboard.Img
+            <br />
+            <label>Количество   </label>@Model.Motherboard.Name
+            <br />
+            <label>Цена   </label>@Model.Motherboard.Cost
+            <br />
+            using (Html.BeginForm("DeleteFromAssembly", "Main", FormMethod.Post))
+            {
+                <input type="hidden" name="i" value="6">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.RAM.Type == "")
+        {
+            using (Html.BeginForm("RAMOutput", "Main"))
+            {
+                <input type="submit" value="Добавить ОЗУ">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Название   </label>@Model.RAM.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.RAM.Img
+            <br />
+            <label>Количество   </label>@Model.RAM.Name
+            <br />
+            <label>Цена   </label>@Model.RAM.Cost
+            <br />
+            using (Html.BeginForm("DeleteFromAssembly", "Main", FormMethod.Post))
+            {
+                <input type="hidden" name="i" value="7">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+    </body>

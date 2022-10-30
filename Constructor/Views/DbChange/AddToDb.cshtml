@@ -1,0 +1,146 @@
+﻿
+<body>
+    @using (Html.BeginForm("AddCase", "Case", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+        <input type="text" name="_FormFactor" placeholder="Формфактор" /><br />
+        <input type="text" name="_FAN140Count" placeholder="Количество вентиляторов 140мм" /><br />
+        <input type="text" name="_FAN120Count" placeholder="Количество вентиляторов 120мм" /><br />
+        <input type="text" name="_FAN90Count" placeholder="Количество вентиляторов 90мм" /><br />
+        <input type="text" name="_Drive25Count" placeholder="Количество ЖД 2.5" /><br />
+        <input type="text" name="_Drive35Count" placeholder="Количество ЖД 3.5" /><br />
+
+        <input type="submit" value="Добавить корпус">
+    }
+    <br />
+    @using (Html.BeginForm("AddCpu", "CPU", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+
+        <input type="text" name="_Socket" placeholder="Сокет" /><br />
+        <input type="text" name="_Frequency" placeholder="Частота" /><br />
+        <input type="text" name="_ECC" placeholder="ЕСС" /><br />
+        <input type="text" name="_TDP" placeholder="TDP" /><br />
+
+        <input type="submit" value="Добавить CPU">
+    }
+    <br />
+    @using (Html.BeginForm("AddDrive", "Drive", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+
+        <input type="text" name="_Size" placeholder="Размер ЖД" /><br />
+        <input type="text" name="_Volume" placeholder="Объем ЖД" /><br />
+
+        <input type="submit" value="Добавить ЖД">
+    }
+    <br />
+    @using (Html.BeginForm("AddFAN", "FAN", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+
+        <input type="text" name="_Size" placeholder="Размер" /><br />
+
+        <input type="submit" value="Добавить Вентилятор">
+    }
+    <br />
+    @using (Html.BeginForm("AddFSP", "FSP", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+
+        <input type="text" name="_Output" placeholder="Мощность" /><br />
+        <input type="text" name="_FormFactor" placeholder="Формфактор" /><br />
+
+        <input type="submit" value="Добавить блок питания">
+    }
+    <br />
+    @using (Html.BeginForm("AddGPU", "GPU", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+
+        <input type="text" name="_Clock" placeholder="Частота" /><br />
+        <input type="text" name="_MemorySize" placeholder="Объем памяти" /><br />
+        <input type="text" name="_MemoryType" placeholder="Тип памяти" /><br />
+        <input type="text" name="_TDP" placeholder="TDP" /><br />
+        <input type="text" name="_RecommendFSPPower" placeholder="Рекомендуемая мощность блока питания" /><br />
+
+        <input type="submit" value="Добавить GPU">
+    }
+    <br />
+    @using (Html.BeginForm("AddMotherboard", "Motherboard", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+
+        <input type="text" name="_Socket" placeholder="Сокет" /><br />
+        <input type="text" name="_Chipset" placeholder="Чипсчет" /><br />
+        <input type="text" name="_MemoryType" placeholder="Тип памяти" /><br />
+        <input type="text" name="_ECC" placeholder="ECC" /><br />
+        <input type="text" name="_RAMCount" placeholder="Количество ОЗУ" /><br />
+        <input type="text" name="_FANCount" placeholder="Количество Вентиляторв" /><br />
+        <input type="text" name="_DriveCount" placeholder="Количество ЖД" /><br />
+        <input type="text" name="_Formfactor" placeholder="Формфактор" /><br />
+
+
+        <input type="submit" value="Добавить материнскую плату">
+    }
+    <br />
+    @using (Html.BeginForm("AddRAM", "RAM", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+
+        <input type="text" name="_MemorySize" placeholder="Объем памяти" /><br />
+        <input type="text" name="_MemoryType" placeholder="Тип памяти" /><br />
+        <input type="text" name="_ECC" placeholder="ECC" /><br />
+        <input type="submit" value="Добавить ОЗУ">
+    }
+    <br />
+    @using (Html.BeginForm("AddCpuFan", "CpuFan", FormMethod.Post))
+    {
+
+        <input type="text" name="_Name" placeholder="Название" /><br />
+        <input type="text" name="_Img" placeholder="Ссылка на изображение" /><br />
+        <input type="text" name="_Count" placeholder="Количество" /><br />
+        <input type="text" name="_Cost" placeholder="цена" /><br />
+
+        <input type="text" name="_TDP" placeholder="Максимальное тепловыделение процессора" /><br />
+        <input type="text" name="_Sockets" placeholder="Список поддерживаемых сокетов" /><br />
+        <input type="submit" value="Добавить кулер">
+    }
+    <br /><br /><br />
+    @using (Html.BeginForm("MainPage", "Main"))
+    {
+        <input type="submit" value="В главное меню">
+    }
+</body>

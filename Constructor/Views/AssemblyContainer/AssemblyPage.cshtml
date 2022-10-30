@@ -1,0 +1,267 @@
+﻿@using Constructor.Storage.Containers;
+@model AssemblyContainer;
+
+<head>
+    <h1>@Model.Id</h1>
+</head>
+<body>
+    @if (Model.Case != null)
+    {
+        <label font-size="30px">Корпус</label><br />
+        <label>Id - @Model.Case.Id</label><br />
+        <label>Название - @Model.Case.Name</label><br />
+        <label>Цена - @Model.Case.Cost</label><br />
+        @using (Html.BeginForm("Output", "Case", FormMethod.Get))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Поменять корпус">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "Case", FormMethod.Get))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Добавить корпус">
+        }
+    }
+    @if (Model.CPU != null)
+    {
+        <label font-size="30px">Процессор</label><br />
+        <label>Id - @Model.CPU.Id</label><br />
+        <label>Название - @Model.CPU.Name</label><br />
+        <label>Цена - @Model.CPU.Cost</label><br />
+        @using (Html.BeginForm("Output", "CPU", FormMethod.Get))
+        {
+
+            <input type="hidden" name="Id" value="@Model.Id">
+            <input type="submit" value="Поменять процессор">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "CPU", FormMethod.Get))
+        {
+
+            <input type="hidden" name="Id" value="@Model.Id">
+            <input type="submit" value="Добавить процессор">
+        }
+    }
+
+    @if (Model.CpuFan != null)
+    {
+        <label font-size="30px">Кулер</label><br />
+        <label>Id - @Model.CpuFan.Id</label><br />
+        <label>Название - @Model.CpuFan.Name</label><br />
+        <label>Цена - @Model.CpuFan.Cost</label><br />
+        @using (Html.BeginForm("Output", "CpuFan", FormMethod.Get))
+        {
+
+            <input type="hidden" name="Id" value="@Model.Id">
+            <input type="submit" value="Поменять кулер">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "CpuFan", FormMethod.Get))
+        {
+
+            <input type="hidden" name="Id" value="@Model.Id">
+            <input type="submit" value="Добавить кулер">
+        }
+    }
+
+    @if (Model.Drives.Count != 0)
+    {
+        <label font-size="30px">Жесткие диски</label><br />
+        @foreach (var tmp in Model.Drives)
+        {
+            <label>Id - @tmp.Id</label><br />
+            <label>Название - @tmp.Name</label><br />
+            <label>Цена - @tmp.Cost</label><br />
+            @using (Html.BeginForm("ChangeDriveInPair", "Pair", FormMethod.Get))
+            {
+
+                <input type="hidden" name="AssemblyId" value="@Model.Id">
+                <input type="hidden" name="DriveId" value="@tmp.Id">
+                <input type="submit" value="Поменять жесткий диск">
+            }
+            @using (Html.BeginForm("DeleteDrivePair", "Pair", FormMethod.Post))
+            {
+
+                <input type="hidden" name="AssemblyId" value="@Model.Id">
+                <input type="hidden" name="DriveId" value="@tmp.Id">
+                <input type="submit" value="Удалить жесткий диск">
+            }
+            <br /><br /><br />
+        }
+        @using (Html.BeginForm("Output", "Drive", FormMethod.Get))
+        {
+
+            <input type="hidden" name="Id" value="@Model.Id">
+            <input type="submit" value="Добавить жесткий диск">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "Drive", FormMethod.Get))
+        {
+
+            <input type="hidden" name="Id" value="@Model.Id">
+            <input type="submit" value="Добавить жесткий диск">
+        }
+    }
+
+    @if (Model.FANs.Count != 0)
+    {
+        <label font-size="30px">Вентиляторы</label><br />
+        @foreach (var tmp in Model.FANs)
+        {
+            <label>Id - @tmp.Id</label><br />
+            <label>Название - @tmp.Name</label><br />
+            <label>Цена - @tmp.Cost</label><br />
+            @using (Html.BeginForm("ChangeFANInPair", "Pair", FormMethod.Get))
+            {
+
+                <input type="hidden" name="AssemblyId" value="@Model.Id">
+                <input type="hidden" name="FANId" value="@tmp.Id">
+                <input type="submit" value="Поменять Вентилятор">
+            }
+            @using (Html.BeginForm("DeleteFANPair", "Pair", FormMethod.Post))
+            {
+
+                <input type="hidden" name="AssemblyId" value="@Model.Id">
+                <input type="hidden" name="FANId" value="@tmp.Id">
+                <input type="submit" value="Удалить вентилятор">
+            }
+            <br /><br /><br />
+        }
+        @using (Html.BeginForm("Output", "FAN", FormMethod.Get))
+        {
+
+            <input type="hidden" name="id" value="@Model.Id">
+            <input type="submit" value="Добавить вентилятор">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "FAN", FormMethod.Get))
+        {
+
+            <input type="hidden" name="id" value="@Model.Id">
+            <input type="submit" value="Добавить вентилятор">
+        }
+    }
+    @if (Model.FSP != null)
+    {
+        <label font-size="30px">БП</label><br />
+        <label>Id - @Model.FSP.Id</label><br />
+        <label>Название - @Model.FSP.Name</label><br />
+        <label>Цена - @Model.FSP.Cost</label><br />
+        @using (Html.BeginForm("Output", "FSP", FormMethod.Post))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Поменять БП">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "FSP", FormMethod.Post))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Добавить БП">
+        }
+    }
+    @if (Model.GPU != null)
+    {
+        <label font-size="30px">Видеокарта</label><br />
+        <label>Id - @Model.GPU.Id</label><br />
+        <label>Название - @Model.GPU.Name</label><br />
+        <label>Цена - @Model.GPU.Cost</label><br />
+        @using (Html.BeginForm("Output", "GPU", FormMethod.Post))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Поменять Видеокарту">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "GPU", FormMethod.Post))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Добавить Видеокарту">
+        }
+    }
+    @if (Model.Motherboard != null)
+    {
+        <label font-size="30px">МатПлата</label><br />
+        <label>Id - @Model.Motherboard.Id</label><br />
+        <label>Название - @Model.Motherboard.Name</label><br />
+        <label>Цена - @Model.Motherboard.Cost</label><br />
+        @using (Html.BeginForm("Output", "Motherboard", FormMethod.Post))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Поменять Материнку">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "Motherboard", FormMethod.Post))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Добавить Материнку">
+        }
+    }
+    @if (Model.Rams.Count != 0)
+    {
+        <label font-size="30px">ОЗУ</label><br />
+        @foreach (var tmp in Model.Rams)
+        {
+            <label>Id - @tmp.Id</label><br />
+            <label>Название - @tmp.Name</label><br />
+            <label>Цена - @tmp.Cost</label><br />
+            @using (Html.BeginForm("ChangeRAMInPair", "Pair", FormMethod.Get))
+            {
+
+                <input type="hidden" name="AssemblyId" value="@Model.Id">
+                <input type="hidden" name="RAMId" value="@tmp.Id">
+                <input type="submit" value="Поменять ОЗУ">
+            }
+            @using (Html.BeginForm("DeleteRAMPair", "Pair", FormMethod.Post))
+            {
+
+                <input type="hidden" name="AssemblyId" value="@Model.Id">
+                <input type="hidden" name="RAMId" value="@tmp.Id">
+                <input type="submit" value="Удалить ОЗУ">
+            }
+            <br /><br /><br />
+        }
+        @using (Html.BeginForm("Output", "RAM", FormMethod.Get))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Добавить ОЗУ">
+        }
+    }
+    else
+    {
+        @using (Html.BeginForm("Output", "RAM", FormMethod.Get))
+        {
+
+            <input type="hidden" name="_Container" value="@Model.Id">
+            <input type="submit" value="Добавить ОЗУ">
+        }
+    }
+    @using (Html.BeginForm("MainPage", "Main"))
+    {
+        <input type="submit" value="В главное меню">
+    }
+</body>

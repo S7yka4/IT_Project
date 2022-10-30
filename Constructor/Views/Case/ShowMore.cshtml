@@ -1,0 +1,32 @@
+﻿@using Constructor.Storage.Models;
+
+@model Case;
+<body>
+    <label>Id   </label>@Model.Id
+    <br />
+    <label>Название   </label>@Model.Name
+    <br />
+    <label>Ссылка   </label>@Model.Img
+    <br />
+    <label>Количество   </label>@Model.Count
+    <br />
+    <label>Цена   </label>@Model.Cost
+    <br />
+    <label>Формафактор   </label>@Model.FormFactor
+    <br />
+    <label>Количество вентиляторов 140мм   </label>@Model.Fan140Count
+    <br />
+    <label>Количество вентиляторов 120мм   </label>@Model.Fan120Count
+    <br />
+    <label>Количество вентиляторов 90мм   </label>@Model.Fan90Count
+    <br />
+    <label>Количество жестких дисков 2.5 </label>@Model.Drive25Count
+    <br />
+    <label>Количество жестких дисков 3.5 </label>@Model.Drive35Count
+    <br />
+    <br /><br /><br />
+    @using (Html.BeginForm("MainPage", "Main"))
+    {
+        <input type="submit" value="В главное меню">
+    }
+</body>

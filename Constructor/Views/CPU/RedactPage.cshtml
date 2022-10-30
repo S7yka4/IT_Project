@@ -1,0 +1,25 @@
+﻿@using Constructor.Storage.Models;
+
+@model CPU;
+
+    <body>
+        @using (Html.BeginForm("RedactCpu", "CPU", FormMethod.Post))
+        {
+
+            <label>Название   </label><input type="text" name="_Name" value=@Model.Name /><br />
+            <label>Ссылка   </label><input type="text" name="_Img" value=@Model.Img /><br />
+            <label>Количество   </label><input type="text" name="_Count" value=@Model.Count /><br />
+            <label>Цена   </label><input type="text" name="_Cost" value=@Model.Cost /><br />
+            <label>Сокет   </label><input type="text" name="_Socket" value=@Model.Socket /><br />
+            <label>Частота   </label>       <input type="text" name="_Frequency" value=@Model.Frequency /><br />
+            <label>ECC  </label><input type="text" name="_ECC" value=@Model.ECC /><br />
+            <label>TDP </label><input type="text" name="_TDP" value=@Model.TDP /><br />
+            <input type="hidden" name="id" value="@Model.Id">
+            <input type="submit" value="Изменить запись">
+        }
+        <br /><br /><br />
+        @using (Html.BeginForm("MainPage", "Main"))
+        {
+            <input type="submit" value="В главное меню">
+        }
+    </body>

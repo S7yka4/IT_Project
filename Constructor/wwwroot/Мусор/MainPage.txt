@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MainPage</title>
+    @{//<link href="~/css/MainStyleSheet.css" rel="stylesheet" type="text/css" />}
+</head>
+<body>
+    <div class="parent">
+        <div class="secondblock">
+            @using (Html.BeginForm("MethodName", "ControllerName", FormMethod.Get))
+            {
+                <input type="submit" value="Справка">
+            }
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=DESKTOP-3EBORTV\\MSSQLSERVER12;Database=ConstructorDataBase;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}

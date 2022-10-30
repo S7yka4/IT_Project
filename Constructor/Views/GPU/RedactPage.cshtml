@@ -1,0 +1,25 @@
+﻿@using Constructor.Storage.Models;
+
+@model GPU;
+    <body>
+        @using (Html.BeginForm("RedactGPU", "GPU", FormMethod.Post))
+        {
+
+            <label>Название   </label><input type="text" name="_Name" value=@Model.Name /><br />
+            <label>Ссылка   </label><input type="text" name="_Img" value=@Model.Img /><br />
+            <label>Количество   </label><input type="text" name="_Count" value=@Model.Count /><br />
+            <label>Цена   </label><input type="text" name="_Cost" value=@Model.Cost /><br />
+            <label>Частота   </label><input type="text" name="_Clock" value=@Model.Clock /><br />
+            <label>Объем видеопамяти</label><input type="text" name="_MemorySize" value=@Model.MemorySize /><br />
+            <label>Тип памяти</label><input type="text" name="_MemoryType" value=@Model.MemoryType /><br />
+            <label>TDP   </label><input type="text" name="_TDP" value=@Model.TDP /><br />
+            <label>Рекомендованная мощность блока питания</label><input type="text" name="_RecommendFSPPower" value=@Model.RecommendFSPPower /><br />
+            <input type="hidden" name="id" value="@Model.Id">
+            <input type="submit" value="Изменить запись">
+        }
+        <br /><br /><br />
+        @using (Html.BeginForm("MainPage", "Main"))
+        {
+            <input type="submit" value="В главное меню">
+        }
+    </body>

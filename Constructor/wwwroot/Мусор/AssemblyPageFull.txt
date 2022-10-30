@@ -1,0 +1,185 @@
+86f6abef-d392-41c8-8fdd-1a40832dd4a6
+86f6abef-d392-41c8-8fdd-1a40832dd4a6
+
+
+
+@using Constructor.Storage.Models;
+
+@model Assembly;
+    <body>
+        <h2>раз</h2>
+        <h1>@ViewData["Id"]</h1>
+        <h3>раз</h3>
+        @if (Model.Case == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "Case", FormMethod.Post))
+            {
+                <input type="hidden" name="_tmp" value="@Model.Id">
+                <input type="submit" value="Добавить корпус">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.Case
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="Case">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.CPU == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "CPU"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить CPU">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.CPU
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="CPU">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.Drive == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "Drive"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить ЖД">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.Drive
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="Drive">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.FAN == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "FAN"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить Вентилятор">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.FAN
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="FAN">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.FSP == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "FSP"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить блок питания">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.FSP
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="FSP">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.GPU == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "GPU"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить GPU">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.GPU
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="GPU">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.Motherboard == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "Motherboard"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить материнскую плату">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.Motherboard
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="Motherboard">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.RAM == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "RAM"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить ОЗУ">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.RAM
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="RAM">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @using (Html.BeginForm("MainPage", "Main"))
+        {
+            <input type="submit" value="В главное меню">
+        }
+    </body>

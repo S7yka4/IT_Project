@@ -1,0 +1,27 @@
+﻿@using Constructor.Storage.Models;
+
+@model GPU;
+<body>
+    <label>Id   </label>@Model.Id
+    <br />
+    <label>Название   </label>@Model.Name
+    <br />
+    <label>Ссылка   </label>@Model.Img
+    <br />
+    <label>Количество   </label>@Model.Name
+    <br />
+    <label>Цена   </label>@Model.Cost
+    <br />
+    <label>Частота   </label>@Model.Clock
+    <br />
+    <label>Объем памяти   </label>@Model.MemorySize
+    <br />
+    <label>TDP   </label>@Model.TDP
+    <br />
+    <label>Рекаомендованная мощность БП   </label>@Model.RecommendFSPPower
+    <br /><br /><br />
+    @using (Html.BeginForm("MainPage", "Main"))
+    {
+        <input type="submit" value="В главное меню">
+    }
+</body>

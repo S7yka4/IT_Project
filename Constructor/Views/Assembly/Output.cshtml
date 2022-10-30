@@ -1,0 +1,26 @@
+﻿@using Constructor.Storage.Models;
+
+@model List<Assembly>;
+    <body>
+        @foreach (var tmp in Model)
+        {
+
+            @using (Html.BeginForm("TakeAssembly","Assembly",FormMethod.Get))
+            {
+                <label>Id </label>@tmp.Id<br />
+                <input type="hidden" name="Id" value="@tmp.Id">
+                <input type="submit" value="Редактировать">
+            }
+            @using (Html.BeginForm("DeleteAssembly", "Assembly"))
+            {
+                <input type="hidden" name="Id" value="@tmp.Id">
+                <input type="submit" value="Удалить">
+            }
+            
+        }
+        <br /><br /><br /><br />
+        @using (Html.BeginForm("MainPage", "Main"))
+        {
+            <input type="submit" value="В главное меню">
+        }
+    </body>

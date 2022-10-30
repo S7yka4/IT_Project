@@ -1,0 +1,22 @@
+﻿@using Constructor.Storage.Models;
+
+@model Drive;
+    <body>
+        @using (Html.BeginForm("RedactDrive", "Drive", FormMethod.Post))
+        {
+
+            <label>Название   </label><input type="text" name="_Name" value=@Model.Name /><br />
+            <label>Ссылка   </label><input type="text" name="_Img" value=@Model.Img /><br />
+            <label>Количество   </label><input type="text" name="_Count" value=@Model.Count /><br />
+            <label>Цена   </label><input type="text" name="_Cost" value=@Model.Cost /><br />
+            <label>Размер   </label><input type="text" name="_Size" value=@Model.Size /><br />
+            <label>Емкость  </label><input type="text" name="_Volume" value=@Model.Volume /><br />
+            <input type="hidden" name="id" value="@Model.Id">
+            <input type="submit" value="Изменить запись">
+        }
+        <br /><br /><br />
+        @using (Html.BeginForm("MainPage", "Main"))
+        {
+            <input type="submit" value="В главное меню">
+        }
+    </body>

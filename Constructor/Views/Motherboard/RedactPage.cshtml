@@ -1,0 +1,29 @@
+﻿@using Constructor.Storage.Models;
+
+@model Motherboard;
+<body>
+    @using (Html.BeginForm("RedactMotherboard", "Motherboard", FormMethod.Post))
+    {
+
+        <label>Название   </label><input type="text" name="_Name" value=@Model.Name /><br />
+        <label>Ссылка   </label><input type="text" name="_Img" value=@Model.Img /><br />
+        <label>Количество   </label><input type="text" name="_Count" value=@Model.Count /><br />
+        <label>Цена   </label><input type="text" name="_Cost" value=@Model.Cost /><br />
+        <label>Сокет</label><input type="text" name="_Socket" value=@Model.Socket /><br />
+        <label>Чипсет</label><input type="text" name="_Chipset" value=@Model.Chipset /><br />
+        <label>Тип памяти</label><input type="text" name="_MemoryType" value=@Model.MemoryType /><br />
+        <label>ЕСС</label><input type="text" name="_ECC" value=@Model.ECC /><br />
+        <label>Количество слотов под ОЗУ</label><input type="text" name="_RAMCount" value=@Model.RAMCount /><br />
+        <label>Количество слотов для Вентиляторов</label><input type="text" name="_FANCount" value=@Model.FANCount /><br />
+        <label>Количество слотов для Жестких дисков</label><input type="text" name="_DriveCount" value=@Model.DriveCount /><br />
+        <label>Формфактор</label><input type="text" name="_FormFactor" value=@Model.FormFactor /><br />
+
+        <input type="hidden" name="id" value="@Model.Id">
+        <input type="submit" value="Изменить Запись">
+    }
+    <br /><br /><br />
+    @using (Html.BeginForm("MainPage", "Main"))
+    {
+        <input type="submit" value="В главное меню">
+    }
+</body>

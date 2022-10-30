@@ -1,0 +1,21 @@
+﻿@using Constructor.Storage.Models;
+
+@model FSP;
+    <body>
+        @using (Html.BeginForm("RedactFSP", "FSP", FormMethod.Post))
+        {
+            <label>Название   </label><input type="text" name="_Name" value=@Model.Name /><br />
+            <label>Ссылка   </label><input type="text" name="_Img" value=@Model.Img /><br />
+            <label>Количество   </label><input type="text" name="_Count" value=@Model.Count /><br />
+            <label>Цена   </label><input type="text" name="_Cost" value=@Model.Cost /><br />
+            <label>Формфактор   </label><input type="text" name="_FormFactor" value=@Model.FormFactor /><br />
+            <label>Мощность   </label><input type="text" name="_Output" value=@Model.Output /><br />
+            <input type="hidden" name="id" value="@Model.Id">
+            <input type="submit" value="Изменить запись">
+        }
+        <br /><br /><br />
+        @using (Html.BeginForm("MainPage", "Main"))
+        {
+            <input type="submit" value="В главное меню">
+        }
+    </body>

@@ -1,0 +1,54 @@
+﻿@using Constructor.Storage.Models;
+
+@model List<Device>
+    <body>
+        @foreach (var tmp in Model)
+        {
+            <label>Id</label>
+            <br />
+            @tmp.Id
+            <br />
+            <label>название</label>
+            <br />
+            @tmp.Name
+            <br />
+            <label>количество</label>
+            <br />
+            @tmp.Count
+            <br />
+            <label>Цена</label>
+            <br />
+            @tmp.Cost
+            <br />
+            <label>Раздел</label>
+            <br />
+            @tmp.Type
+            <br />
+            @using (Html.BeginForm("Delete", tmp.Type, FormMethod.Get))
+            {
+                <input type="hidden" name="id" value="@tmp.Id">
+                <input type="submit" value="Удалить">
+            }
+            @using (Html.BeginForm("RedactPage", tmp.Type, FormMethod.Get))
+            {
+                <input type="hidden" name="id" value="@tmp.Id">
+                <input type="submit" value="Изменить">
+            }
+            @using (Html.BeginForm("ShowMore", tmp.Type, FormMethod.Get))
+            {
+                <input type="hidden" name="id" value="@tmp.Id">
+                <input type="submit" value="Подробнее">
+            }
+
+            <br /><br /><br />
+
+        }
+        @using (Html.BeginForm("AddToDb", "DbChange", FormMethod.Get))
+        {
+            <input type="submit" value="Добавить в бд">
+        }
+        @using (Html.BeginForm("MainPage", "Main"))
+        {
+            <input type="submit" value="В главное меню">
+        }
+    </body>

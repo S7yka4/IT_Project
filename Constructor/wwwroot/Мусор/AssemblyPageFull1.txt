@@ -1,0 +1,244 @@
+@using Constructor.Storage.Containers;
+
+@model AssemblyContainer;
+    <body>
+        <h2>раз</h2>
+        <h1>@ViewData["Id"]</h1>
+        <h3>раз</h3>
+        @if (Model.Case == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "Case", FormMethod.Post))
+            {
+                <input type="hidden" name="_tmp" value="@Model.Id">
+                <input type="submit" value="Добавить корпус">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.CaseValue.Id
+            <br />
+            <label>Название   </label>@Model.CaseValue.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.CaseValue.Img
+            <br />
+            <label>Количество   </label>@Model.CaseValue.Name
+            <br />
+            <label>Цена   </label>@Model.CaseValue.Cost
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="Case">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.CPU == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "CPU"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить CPU">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.CPUValue.Id
+            <br />
+            <label>Название   </label>@Model.CPUValue.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.CPUValue.Img
+            <br />
+            <label>Количество   </label>@Model.CPUValue.Name
+            <br />
+            <label>Цена   </label>@Model.CPUValue.Cost
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="CPU">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.Drive == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "Drive"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить ЖД">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.DriveValue.Id
+            <br />
+            <label>Название   </label>@Model.DriveValue.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.DriveValue.Img
+            <br />
+            <label>Количество   </label>@Model.DriveValue.Name
+            <br />
+            <label>Цена   </label>@Model.DriveValue.Cost
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="Drive">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.FAN == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "FAN"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить Вентилятор">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.FANValue.Id
+            <br />
+            <label>Название   </label>@Model.FANValue.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.FANValue.Img
+            <br />
+            <label>Количество   </label>@Model.FANValue.Name
+            <br />
+            <label>Цена   </label>@Model.FANValue.Cost
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="FAN">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.FSP == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "FSP"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить блок питания">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.FSPValue.Id
+            <br />
+            <label>Название   </label>@Model.FSPValue.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.FSPValue.Img
+            <br />
+            <label>Количество   </label>@Model.FSPValue.Name
+            <br />
+            <label>Цена   </label>@Model.FSPValue.Cost
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="FSP">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.GPU == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "GPU"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить GPU">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.GPUValue.Id
+            <br />
+            <label>Название   </label>@Model.GPUValue.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.GPUValue.Img
+            <br />
+            <label>Количество   </label>@Model.GPUValue.Name
+            <br />
+            <label>Цена   </label>@Model.GPUValue.Cost
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="GPU">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.Motherboard == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "Motherboard"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить материнскую плату">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.MotherboardValue.Id
+            <br />
+            <label>Название   </label>@Model.MotherboardValue.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.MotherboardValue.Img
+            <br />
+            <label>Количество   </label>@Model.MotherboardValue.Name
+            <br />
+            <label>Цена   </label>@Model.MotherboardValue.Cost
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="Motherboard">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @if (Model.RAM == Guid.Empty)
+        {
+            using (Html.BeginForm("Output", "RAM"))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="submit" value="Добавить ОЗУ">
+            }
+        }
+        else
+        {
+            <br />
+            <label>Id   </label>@Model.RAMValue.Id
+            <br />
+            <label>Название   </label>@Model.RAMValue.Name
+            <br />
+            <label>Ссылка хуилка   </label>@Model.RAMValue.Img
+            <br />
+            <label>Количество   </label>@Model.RAMValue.Name
+            <br />
+            <label>Цена   </label>@Model.RAMValue.Cost
+            <br />
+            using (Html.BeginForm("ClearField", "Assembly", FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id">
+                <input type="hidden" name="Field" value="RAM">
+                <input type="submit" value="Удалить">
+            }
+            <br /><br /><br />
+        }
+        @using (Html.BeginForm("MainPage", "Main"))
+        {
+            <input type="submit" value="В главное меню">
+        }
+    </body>

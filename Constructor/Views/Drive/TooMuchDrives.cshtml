@@ -1,0 +1,8 @@
+﻿@model Guid;
+
+<h1>подходящих жестких дисков не найдено</h1>
+@using (Html.BeginForm("TakeAssembly", "Assembly",FormMethod.Get))
+{
+    <input type="hidden" name="Id" value="@Model">
+    <input type="submit" value="Вернуться на страницу со сборкой">
+}

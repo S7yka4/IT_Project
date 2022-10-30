@@ -1,0 +1,16 @@
+﻿
+    <body>
+        
+        @using (Html.BeginForm("MakeAssembly", "Assembly", FormMethod.Get))
+        {
+            <input type="submit" value="Создать сборку">
+        }
+        @using (Html.BeginForm("Output", "DbChange"))
+        {
+            <input type="submit" value="Изменить бд">
+        }
+        @using (Html.BeginForm("Output", "Assembly"))
+        {
+            <input type="submit" value="Менеджер сборок">
+        }
+    </body>
