@@ -22,35 +22,26 @@ html {
 /* Навигационная панель 1 */
 
 #navbar{
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 	position: sticky;
 	top:0px;
 /*	transition: all  0.8s ease;*/
-z-index:10002;
+	z-index:10002;
 }
 #navbar::before{
 	content:"";
 	background-color: rgb(0,0,0);
 	position: absolute;
 	top: 0px;
+	left:0px;
 	height: 100%;
-	width: 1900px;
+	width: 100%;
 	z-index:-1;
 	opacity: 0.8;
    
 }
-#logo
-{
-	margin: 10px 34px;
-	
-}
-#logo img
-{	height: 100px;
-	width: 100px;
-	margin: 3px 6px;
 
-}
 #navbar ul{
 	display: flex;
 }
@@ -69,6 +60,20 @@ z-index:10002;
 	list-style: none;
 	background-color: rgb(113,104,104);
 }
+
+
+#logo
+{
+	margin: 10px 34px;
+	
+}
+#logo img
+{	height: 50px;
+	width: 50px;
+	margin: 3px 6px;
+
+}
+
 
 
 /* Навигационная панель 2 */
@@ -210,8 +215,9 @@ header .logo1 img
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 1000px;
+	height: 1100px;
 	padding: 5px 12px;
+	
 
 }
 #Labs::before
@@ -221,8 +227,8 @@ header .logo1 img
 	top:0px;
 	left: 0px;
 	background: url(images/wallpaperbetter.com_1920x1080.jpg) no-repeat center/cover;
-	height: 1080px;
-	width: 1900px;
+	height: 118vh;
+	width: 100%;
 	z-index: -1;
 	opacity: 1;
 
@@ -250,6 +256,8 @@ header .logo1 img
 {
 	margin-top: 1000px;
 }
+
+
 
 
 /* Кнопка */
@@ -309,20 +317,116 @@ header .logo1 img
 }
 
 
+@media (max-width: 1919px) 
+{
+	#navbar{
+		flex-direction: column;
+	}
+	#navbar ul li a{
+		font-size: 1 rem;
+		padding: 0px 7px;
+		padding-bottom: 8px;
+	}
+
+
+	#Labs{
+		height: 800px;
+		padding: 3px 28px;
+	}
+	#Labs::before{
+		height: 880px;
+	}
+	#Labs px{
+		font-size: 15px;
+	}
+
+
+	#container{
+		flex-direction: column;
+		align-items: center;
+  		justify-content: center;
+	}
+	#container.box{
+		padding: 6px;
+		margin: 3px 0px;
+
+	}
+	#container .box img
+	{
+	height: 90px;
+	display: block;
+	margin: auto;
+
+	}
+
+	.block__info
+	{
+		margin-top: 50px;
+	}
+	.block{
+		flex-direction: column-reverse;
+		align-items: center;
+  		justify-content: center;
+	}
+	
+
+
+	
+
+#clients-section{
+
+flex-wrap: wrap;
+
+}
+#clients-item{
+	padding: 5px;
+}
+#clients-section img {
+
+	width: 66px;
+	padding: 25px 2px;
+	height: auto;
+}
+
+#contact{
+	position: relative;
+	margin-top: 160px;
+
+
+}
+
+#contact-box form{
+
+	width: 80%;
+}
+
+.h-primary{
+	font-size: 2rem;
+
+}
+.btn{
+	font-size: 14px;
+	padding: 4px 8px;
+}
+
+
+
+}
+
+
+
+
+
 
 /*Секция с самими лабами внутри*/
 
 #container{
 	display: flex;
 	margin: 34px;
-
-
-
-	
 }
 #container .box{
 	border: 2px solid brown;
-	padding: 40px;
+	padding: 23px;
 	margin: 3px 30px;
 	border-radius: 23px;
 	background: -webkit-linear-gradient(0deg, white, rgb(132,144,255));	height: 450px;
@@ -336,7 +440,7 @@ header .logo1 img
 #container .box img{
 
 	height: 250px;
-	width: 280px;
+	
 	display: block;
 	margin: auto ;
 
@@ -349,6 +453,10 @@ header .logo1 img
 	font-size: 1.2rem;
 
 }
+
+
+
+
 .LabsVibor
 {
 	padding-top: 20px;
@@ -375,7 +483,7 @@ header .logo1 img
 .LabsViborboth2
 {
 	padding-top: 20px;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
 	margin-top: 100px;
 	text-align:center;
 	height: 20px;
@@ -604,7 +712,7 @@ border: 2px solid brown;
 
 
 .photos{
-	margin: 150px 100px 100px 150px;
+	margin:  100px 100px 150px;
 	background: -webkit-linear-gradient(0deg, brown, darkblue);
 }
 .photos img{
@@ -763,10 +871,8 @@ footer
 {
 	position: relative;
 	width: 100%;
-	height: 50;
 	background: #3586ff;
 	min-height: 100px;
-	padding: 20px 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -961,7 +1067,7 @@ footer .wave#wave4
 
 .block {
     display: flex;
-    flex-direction: row;
+    
     padding: 60px 0;
 /*    background:seagreen;*/
      
@@ -982,9 +1088,9 @@ footer .wave#wave4
    
 }
 
-.block-revert {
+/*.block-revert {
     flex-direction: row-reverse;
-}
+}*/
 
 .block__img {
     display: flex;
@@ -1005,15 +1111,15 @@ footer .wave#wave4
 }
 
 .block__header {
+	padding-top: 30px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
     line-height: 45px;
     /* identical to box height, or 128% */
-    margin-bottom: 30px;
+   
     text-align: center;
-
     color: #000000;
     text-transform: uppercase;
 }
@@ -1027,7 +1133,7 @@ footer .wave#wave4
     /* or 137% */
     width: 800px;
     text-align: center;
-
+    display: flex;
     color: white;
 
 }
