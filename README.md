@@ -30,6 +30,6 @@
 #### • ИДМ-22-08  
    o Петров Матфей;   
 ## ✅ Landing Page:  
- <https://s7yka4.github.io/IT_Project> Тут будет ссылка на Landing page </a> 
+ <a href=https://s7yka4.github.io/IT_Project> Тут будет ссылка на Landing page </a> 
 ## ✅ Дополнительные материалы по проекту:  
   <a href=https://github.com/S7yka4/IT_Project> Будут если понадобятся
