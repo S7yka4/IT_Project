@@ -62,3 +62,27 @@ const hiddenElements3 = document.querySelectorAll(".hidden3");
 hiddenElements3.forEach((element) => {
   observer3.observe(element);
 });
+
+
+
+
+
+
+
+
+
+const observerup = new IntersectionObserver((entriesup) => {
+  entriesup.forEach((entryup) => {
+    if (entryup.isIntersecting) {
+      entryup.target.classList.add("showup");
+    } else {
+      entryup.target.classList.remove("showup");
+    }
+  });
+});
+
+const hiddenElementsup = document.querySelectorAll(".hiddenup");
+
+hiddenElementsup.forEach((element) => {
+  observerup.observe(element);
+});

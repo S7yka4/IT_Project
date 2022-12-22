@@ -317,10 +317,36 @@ header .logo1 img
 }
 
 
-@media (max-width: 1919px) 
+/*@media (min-height: 1100px) 
 {
 	#navbar{
 		flex-direction: column;
+	}
+	#navbar ul li a{
+		font-size: 1 rem;
+		padding: 0px 7px;
+		padding-bottom: 8px;
+	}
+
+
+	#Labs{
+		height: 800px;
+		padding: 3px 28px;
+	}
+	#Labs::before{
+		height: 880px;
+	}
+	#Labs px{
+		font-size: 15px;
+	}
+*/
+
+
+
+@media (max-width: 1900px) 
+{
+	#navbar{
+		flex-direction: row;
 	}
 	#navbar ul li a{
 		font-size: 1 rem;
@@ -362,11 +388,19 @@ header .logo1 img
 	.block__info
 	{
 		margin-top: 50px;
+
+
 	}
+	.block_banner
+	{
+
+	}
+	
 	.block{
 		flex-direction: column-reverse;
 		align-items: center;
   		justify-content: center;
+
 	}
 	
 
@@ -697,31 +731,46 @@ border: 2px solid brown;
 {
 
 	font-family: sans-serif;
+	border-radius: 30em;
 
 }
 
-.Gallerey h1
+
+
+
+@media(prefers-reduced-motion)
 {
-
-	text-align: center;
-	color: forestgreen;
-	margin: 30px 0 50px;
-
+	.hidden{
+		transition: none;
+	}
+	.hidden1{
+		transition: none;
+	}
+	.hidden2{
+		transition: none;
+	}
+	.hidden3{
+		transition: none;
+	}
+	.hidden4{
+		transition: none;
+	}
+	.hiddenup{
+		transition: none;
+	}
 }
-
-
-
 .photos{
-	margin:  100px 100px 150px;
+	margin:  100px 100px 150px 150px;
 	background: -webkit-linear-gradient(0deg, brown, darkblue);
 }
 .photos img{
 	margin-left: 120px;
 	margin-bottom: 50px;
 	margin-top: 50px;
+
 	width: 160px;
 	height: 100px;
-	padding: 20px;
+	padding: 10px;
 	background: grey;
 	transition: 1s;
 
@@ -786,7 +835,7 @@ border: 2px solid brown;
 .hidden3 {
 	z-index: ;
   opacity: 0;
-  filter: blur(5px);
+  filter: blur(2px);
   transition: all 1s;
 }
 .show3 {
@@ -1011,8 +1060,39 @@ footer .wave#wave4
 	}
 }
 
+.client-item
+{
+	
+	
+}
 
+.client-item:nth-child(2)
+{
+transition-delay: 400ms;
+}
 
+.client-item:nth-child(3)
+{
+	transition-delay: 600ms;
+}
+
+.client-item:nth-child(4)
+{
+	transition-delay: 800ms;
+}
+
+.hiddenup {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+.showup {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+}
+	
 
 
 .select1{
@@ -1079,7 +1159,7 @@ footer .wave#wave4
 /*    background:seagreen;*/
    background: -webkit-linear-gradient(0deg, rgb(132,144,255), seagreen);
 /*   background-color: rgb(235,228,228);*/
-   margin-right: 6%;
+   	margin-right: 6%;
     margin-left: 5%;
     margin-bottom: 100px;
     margin-top: 100px;
