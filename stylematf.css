@@ -346,7 +346,7 @@ header .logo1 img
 @media (max-width: 1900px) 
 {
 	#navbar{
-		flex-direction: row;
+		flex-direction: column;
 	}
 	#navbar ul li a{
 		font-size: 1 rem;
