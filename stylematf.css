@@ -346,7 +346,7 @@ header .logo1 img
 @media (max-width: 1900px) 
 {
 	#navbar{
-		flex-direction: row;
+		flex-direction: column;
 	}
 	#navbar ul li a{
 		font-size: 1 rem;
@@ -738,7 +738,7 @@ border: 2px solid brown;
 
 
 
-@media(prefers-reduced-motion)
+/*@media(prefers-reduced-motion)
 {
 	.hidden{
 		transition: none;
@@ -758,22 +758,28 @@ border: 2px solid brown;
 	.hiddenup{
 		transition: none;
 	}
-}
+}*/
 .photos{
 	margin:  100px 100px 150px 150px;
-	background: -webkit-linear-gradient(0deg, brown, darkblue);
+/*	background: -webkit-linear-gradient(0deg, rgb(139, 69, 19), rgb(132,144,255));*/
+/*	background: -webkit-linear-gradient(100deg, brown, darkblue);*/
+	background: -webkit-linear-gradient(0deg, rgb(139, 69, 19), rgb(255, 160, 122));
+	border-radius: 4rem;
+
+/*	rgb(255, 99, 71),*/
+	border: 5px solid rgb(0, 0, 0);
 }
 .photos img{
 	margin-left: 120px;
 	margin-bottom: 50px;
 	margin-top: 50px;
-
 	width: 160px;
 	height: 100px;
-	padding: 10px;
-	background: grey;
+	padding: 8px;
+	background: red;
+	border-radius: 1rem;
 	transition: 1s;
-
+	filter: grayscale(1);
 }
 
 .photos img:hover
@@ -805,7 +811,7 @@ border: 2px solid brown;
 /*Анимации Вправо много раз */
 .hidden1 {
   opacity: 0;
-  filter: blur(5px);
+  filter: blur(1px);
   transform: translateX(+20%);
   transition: all 1s;
 }
@@ -1068,22 +1074,22 @@ footer .wave#wave4
 
 .client-item:nth-child(2)
 {
-transition-delay: 400ms;
+transition-delay: 10ms;
 }
 
 .client-item:nth-child(3)
 {
-	transition-delay: 600ms;
+	transition-delay: 20ms;
 }
 
 .client-item:nth-child(4)
 {
-	transition-delay: 800ms;
+	transition-delay: 30ms;
 }
 
 .hiddenup {
   opacity: 0;
-  filter: blur(5px);
+  filter: blur(1px);
   transform: translateX(-100%);
   transition: all 1s;
 }
